@@ -9,11 +9,9 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-   def create
-    super
-    @user.shopping_cart = ShoppingCart.new
-   end
-
+  # def create
+  #  super
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

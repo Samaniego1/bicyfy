@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :bikes do
-    resources :orders, only: [ :new, :create ]
+    resources :orders, only: [ :index, :new, :create ]
   end
-  resources :orders, only: [ :destroy, :create ]
-  resources :shopping_carts, only: [ :show ]
+  resources :orders, only: [ :destroy]
 end
