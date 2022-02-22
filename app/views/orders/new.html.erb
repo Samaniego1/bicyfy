@@ -1,0 +1,11 @@
+<%= simple_form_for [ @shopping_cart, @order ] do |f| %>
+  <%= f.input :amount %>
+  <%= f.imput :date_created %>
+  <%= f.input :status %>
+  <%= f.input :user_id %>
+  <%= f.input :bike_id %>
+  <%= f.input :shopping_cart_id %>
+  <%= f.input :content %>
+
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

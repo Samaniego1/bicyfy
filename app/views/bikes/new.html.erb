@@ -1,0 +1,10 @@
+<%= simple_form_for @bike do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :photo %>
+  <%= f.input :model %>
+  <%= f.input :details %>
+  <%= f.input :category %>
+  <%= f.input :wheel_size %>
+  <%= f.input :price %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
