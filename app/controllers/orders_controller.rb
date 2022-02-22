@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :find_order, only: [:edit, :destroy]
 
+  def index
+    @orders = Order.all
+  end
+  
   def new
     @order = Order.new
   end
@@ -10,7 +14,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.bike = @bike
     if @order.save
-      redirect_to user_path
+      redirect_to bike_path
     else
       render :new
     end
@@ -21,9 +25,9 @@ class OrdersController < ApplicationController
     redirect_to user_path
   end
 
-  def index_by_user
-    @order = Order.where(user: current_user)
-  end
+  # def index_by_user
+  #   @order = Order.where(user: current_user)
+  # end
 
   private
 

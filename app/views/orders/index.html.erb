@@ -1,5 +1,6 @@
 <ul>
   <% @orders.each do |order| %>
     <li><%= order.current_user %></li>
+    <li><%= order.bike %></li>
   <% end %>
 </ul>

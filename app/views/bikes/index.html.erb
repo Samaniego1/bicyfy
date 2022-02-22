@@ -1,9 +1,11 @@
 <h1>My bikes</h1>
 <% @bikes.each do |bike| %>
-  <li><%= bike.brand %></li>
-  <%# <li>bike.model</li>
-  <li>bike.details</li>
-  <li>bike.category</li>
-  <li>bike.wheel_size</li>
-  <li>bike.price</li> %>
+  <li> <%= bike.brand %>
+  <%= bike.photo %>
+  <%= bike.model %>
+  <%= bike.details %>
+  <%= bike.category %>
+  <%= bike.wheel_size %>
+  <%= bike.price %> </li>
+  <%= link_to "Details", bike_path(bike) %>
 <% end %>

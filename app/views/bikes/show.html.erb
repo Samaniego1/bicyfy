@@ -4,3 +4,4 @@
   <p><%= @bike.category %></p>
   <p><%= @bike.wheel_size %></p>
   <p><%= @bike.price %></p>
+  <%= link_to "Buy", new_bike_order_path(@bike) %>

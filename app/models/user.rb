@@ -6,5 +6,4 @@ class User < ApplicationRecord
 
   has_many :bikes
   has_many :orders
-  has_one :shopping_cart
 end
