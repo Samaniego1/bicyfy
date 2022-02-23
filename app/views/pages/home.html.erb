@@ -1,4 +1,28 @@
-<h1>Bicyfy</h1>
-<p>Here goes the searchbar and the list of bikes on sale</p>
+<%= cl_image_tag("https://res.cloudinary.com/stefanomanx/image/upload/v1645635703/bicyfyword_lyabvq.png") %>
 
-<%= link_to "See all bikes", bikes_path %>
+<div class="col-md-6 mb-4">
+  <!-- Search form -->
+  <form class="form-inline md-form form-sm mt-0">
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+
+<div class="cards">
+  <% @bikes.each do |bike| %>
+    <div class="card" style="">
+      <%= bike.brand %>
+      <%= cl_image_tag bike.photo.key, height: 300, crop: :fill %>
+      <%= bike.model %>
+      <%= bike.details %>
+      <%= bike.category %>
+      <%= bike.wheel_size %>
+      <%= bike.price %> </li>
+      <%= link_to "More", bike_path(bike) %>
+    </div>
+  <% end %>
+</div>
+
+
+
+>>>>>>> Stashed changes
