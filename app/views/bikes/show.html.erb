@@ -1,10 +1,9 @@
-<%# @bikes.each do |bike| %>
-  <li> <%= @bike.brand %>
-  <%= @bike.photo %>
-  <%= @bike.model %>
-  <%= @bike.details %>
-  <%= @bike.category %>
-  <%= @bike.wheel_size %>
-  <%= @bike.price %> </li>
-<%# end %>
+<h2><%= @bike.brand %></h2>
+  <h2><%= @bike.model %></h2>
+  <p><%= @bike.details %></p>
+  <p><%= @bike.category %></p>
+  <p><%= @bike.wheel_size %></p>
+  <p><%= @bike.price %></p>
+  <p><%= cl_image_tag @bike.photo.key, height: 300, width: 500, crop: :fill %></p>
+>>>>>>> Stashed changes
   <%= link_to "Buy", new_bike_order_path(@bike) %>

@@ -3,7 +3,6 @@
 <% @bikes.each do |bike| %>
   <% if bike.user_id == current_user.id %>
     <li> <%= bike.brand %>
-    <%= bike.photo %>
     <%= bike.model %>
     <%= bike.details %>
     <%= bike.category %>
