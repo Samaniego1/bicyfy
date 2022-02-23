@@ -1,28 +1,32 @@
-<%= cl_image_tag("https://res.cloudinary.com/stefanomanx/image/upload/v1645635703/bicyfyword_lyabvq.png") %>
-
-<div class="col-md-6 mb-4">
-  <!-- Search form -->
-  <form class="form-inline md-form form-sm mt-0">
-    <i class="fas fa-search" aria-hidden="true"></i>
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-  </form>
+<br>
+<h1 class="text-center"><strong>Welcome to Bicify!</strong></h1>
+<br>
+<div class="container text-center">
+  <div class="col-12">
+    <!-- Search form -->
+    <form class="form-inline md-form form-sm mt-0">
+      <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
 </div>
-
-<div class="cards">
-  <% @bikes.each do |bike| %>
-    <div class="card" style="">
-      <%= bike.brand %>
-      <%= cl_image_tag bike.photo.key, height: 300, crop: :fill %>
-      <%= bike.model %>
-      <%= bike.details %>
-      <%= bike.category %>
-      <%= bike.wheel_size %>
-      <%= bike.price %> </li>
-      <%= link_to "More", bike_path(bike) %>
-    </div>
-  <% end %>
+<br>
+<div class="container">
+  <div class="row multi-columns-row">
+    <% @bikes.each do |bike| %>
+      <div class="col-sm-6 col-md-3 col-lg-3">
+        <div class="card" style="">
+          <ul>
+            <li class="list-unstyled"><%= cl_image_tag bike.photo.key, height: 100, width: 100, crop: :fill %>
+            <li class="list-unstyled"><%= bike.brand %> </li>
+            <li class="list-unstyled"><%= bike.model %> </li>
+            <li class="list-unstyled"><%= bike.category %> </li>
+            <li class="list-unstyled"><%= bike.wheel_size %> </li>
+            <li class="list-unstyled"><%= bike.price %> </li>
+            <li class="list-unstyled"><%= link_to "More", bike_path(bike) %> </li>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+<br>
 
-
-
->>>>>>> Stashed changes

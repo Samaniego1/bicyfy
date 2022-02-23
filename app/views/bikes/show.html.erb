@@ -5,5 +5,4 @@
   <p><%= @bike.wheel_size %></p>
   <p><%= @bike.price %></p>
   <p><%= cl_image_tag @bike.photo.key, height: 300, width: 500, crop: :fill %></p>
->>>>>>> Stashed changes
   <%= link_to "Buy", new_bike_order_path(@bike) %>
