@@ -1,11 +1,14 @@
-<h1>My bikes</h1>
+<h1>My bikes on sale</h1>
+
 <% @bikes.each do |bike| %>
-  <li> <%= bike.brand %>
-  <%= bike.photo %>
-  <%= bike.model %>
-  <%= bike.details %>
-  <%= bike.category %>
-  <%= bike.wheel_size %>
-  <%= bike.price %> </li>
-  <%= link_to "Details", bike_path(bike) %>
+  <% if bike.user_id == current_user.id %>
+    <li> <%= bike.brand %>
+    <%= bike.photo %>
+    <%= bike.model %>
+    <%= bike.details %>
+    <%= bike.category %>
+    <%= bike.wheel_size %>
+    <%= bike.price %> </li>
+    <%= link_to "Details", bike_path(bike) %>
+  <% end %>
 <% end %>
