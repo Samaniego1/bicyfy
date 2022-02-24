@@ -1,3 +1,4 @@
+<br>
 <div class="container">
   <h2>Sign up</h2>
 
@@ -18,15 +19,16 @@
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :name %>
       <%= f.input :address %>
-      <%= f.input :payment_details %>
       <%= f.input :phone %>
-      <%= f.input :role %>
+      <%= f.input :photo, as: :file %>
     </div>
 
   <div class="form-actions">
     <%= f.button  :submit, "Sign up", class:"btn btn-primary" %>
   </div>
   <% end %>
+  <br>
+  <%= render "devise/shared/links" %>
 </div>
 
-<%= render "devise/shared/links" %>
+

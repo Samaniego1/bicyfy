@@ -1,8 +1,14 @@
-<h2><%= @bike.brand %></h2>
-  <h2><%= @bike.model %></h2>
+<br>
+<div class="container">
+  <h1 class = "text-center">My bike</h1>
+
+  <h2><%= @bike.brand %></h2>
+  <p><%= @bike.model %></p>
   <p><%= @bike.details %></p>
   <p><%= @bike.category %></p>
   <p><%= @bike.wheel_size %></p>
   <p><%= @bike.price %></p>
   <p><%= cl_image_tag @bike.photo.key, height: 300, width: 500, crop: :fill %></p>
-  <%= link_to "Buy", new_bike_order_path(@bike) %>
+  <%= link_to "Buy", new_bike_order_path(@bike), class: "btn btn-primary" %>
+</div>
+  
