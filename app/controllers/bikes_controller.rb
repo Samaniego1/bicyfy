@@ -24,10 +24,16 @@ class BikesController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
     @bike.update(bike_params)
+    if @bike.save
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -36,7 +42,7 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:photo, :brand, :model, :details, :category, :wheel_size, :price)
+    params.require(:bike).permit(:brand, :model, :details, :category, :wheel_size, :price, photos: [])
   end
 
   def current_bike

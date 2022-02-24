@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @bike = Bike.find(params[:bike_id])
   end
 
   def create
@@ -29,7 +30,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:amount, :date_created, :status)
+    params.require(:order).permit(:amount, :status)
   end
 
   def find_order

@@ -16,7 +16,7 @@
       <div class="col-sm-6 col-md-3 col-lg-3">
         <div class="card" style="">
           <ul>
-            <li class="list-unstyled"><%= cl_image_tag(bike.photo.key, height: 100, width: 100, crop: :fill) %>
+            <li class="list-unstyled"><%= cl_image_tag bike.photos.first.key, height: 100, width: 100, crop: :fill %>
             <li class="list-unstyled"><%= bike.brand %> </li>
             <li class="list-unstyled"><%= bike.model %> </li>
             <li class="list-unstyled"><%= bike.category %> </li>

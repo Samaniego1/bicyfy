@@ -6,10 +6,10 @@
     <%= f.input :brand %>
     <%= f.input :model %>
     <%= f.input :details %>
-    <%= f.input :category %>
-    <%= f.input :wheel_size %>
+    <%= f.input :category, collection: Bike::CATEGORY %>
+    <%= f.input :wheel_size, collection: Bike::WHEEL_SIZE %>
     <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>
