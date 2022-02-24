@@ -5,7 +5,7 @@
   <%= simple_form_for ([@bike, @order]) do |f| %>
     <%= f.input :full_name %>
     <%= f.input :card_number %>
-    <%= f.input :exp_month, label: "Expiry month" %>
+    <%= f.input :exp_month, collection: Order::MONTH, label: "Expiry month" %>
     <%= f.input :exp_year, label: "Expiry year" %>
     <%= f.input :cvv, label: "CVV" %>
     <%= f.submit "Confirm purhcase", class: "btn btn-primary" %>

@@ -2,23 +2,29 @@ class OrdersController < ApplicationController
   before_action :find_order, only: [:edit, :destroy]
 
   def index
-    @orders = Order.all
+    @orders = Order.all.where(user: current_user)
   end
 
   def new
-    @order = Order.new
     @bike = Bike.find(params[:bike_id])
+    @order = Order.new
   end
 
   def create
     @order = Order.new(order_params)
-    @order.user = current_user
+    @bike = Bike.find(params[:bike_id])
     @order.bike = @bike
+    @order.user = current_user
     if @order.save
-      redirect_to bike_path
+      @bike.status = 0
+      redirect_to orders_path
     else
       render :new
     end
+  end
+
+  def show
+    @order = Order.find(params[:id])
   end
 
   def destroy
@@ -30,7 +36,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:amount, :status)
+    params.require(:order).permit(:amount, :status, :card_number, :full_name, :exp_month, :exp_year, :cvv)
   end
 
   def find_order

@@ -1,6 +1,16 @@
-<ul>
-  <% @orders.each do |order| %>
-    <li><%= order.current_user %></li>
-    <li><%= order.bike %></li>
-  <% end %>
-</ul>
+<br>
+<div class="container">
+  <h2 class = "text-center">Thanks for your purchases</h2>
+  <br>
+  <ul>
+    <% @orders.each do |order| %>
+      <li><%= order.bike.brand %>
+      <%= order.bike.model %>
+      <%= order.bike.price %></li>
+      <p>Datos del vendedor</p>
+      <%= order.user.id %>
+      <br>
+      <hr>
+    <% end %>
+  </ul>
+</div>
