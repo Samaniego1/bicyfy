@@ -1,13 +1,11 @@
 <h1 class = "text-center">My bikes on sale</h1>
 
 <% @bikes.each do |bike| %>
-  <% if bike.user_id == current_user.id %>
-    <li> <%= bike.brand %>
-    <%= bike.model %>
-    <%= bike.details %>
-    <%= bike.category %>
-    <%= bike.wheel_size %>
-    <%= bike.price %> </li>
-    <%= link_to "Details", bike_path(bike) %>
-  <% end %>
+  <li> <%= bike.brand %>
+  <%= bike.model %>
+  <%= bike.details %>
+  <%= bike.category %>
+  <%= bike.wheel_size %>
+  <%= bike.price %> </li>
+  <%= link_to "Details", bike_path(bike) %>
 <% end %>

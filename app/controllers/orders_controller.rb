@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
   end
-  
+
   def new
     @order = Order.new
   end
@@ -25,9 +25,6 @@ class OrdersController < ApplicationController
     redirect_to user_path
   end
 
-  # def index_by_user
-  #   @order = Order.where(user: current_user)
-  # end
 
   private
 

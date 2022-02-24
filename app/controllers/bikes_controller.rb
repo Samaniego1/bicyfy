@@ -2,7 +2,7 @@ class BikesController < ApplicationController
   before_action :current_bike, only: [ :edit, :update, :destroy]
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.where(user: current_user)
   end
 
   def new
