@@ -1,11 +1,11 @@
 <br>
 <h1 class="text-center"><strong>Welcome to Bicify!</strong></h1>
 <br>
-<div class="container text-center">
-  <div class="col-12">
+<div class="container">
+  <div class="">
     <!-- Search form -->
-    <form class="form-inline md-form form-sm mt-0">
-      <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    <form class="form-inline">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
     </form>
   </div>
 </div>
@@ -16,7 +16,7 @@
       <div class="col-sm-6 col-md-3 col-lg-3">
         <div class="card" style="">
           <ul>
-            <li class="list-unstyled"><%= cl_image_tag bike.photo.key, height: 100, width: 100, crop: :fill %>
+            <li class="list-unstyled"><%= cl_image_tag(bike.photo.key, height: 100, width: 100, crop: :fill) %>
             <li class="list-unstyled"><%= bike.brand %> </li>
             <li class="list-unstyled"><%= bike.model %> </li>
             <li class="list-unstyled"><%= bike.category %> </li>

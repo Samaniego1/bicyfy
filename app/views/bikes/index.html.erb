@@ -1,11 +1,15 @@
-<h1 class = "text-center">My bikes on sale</h1>
-
-<% @bikes.each do |bike| %>
-  <li> <%= bike.brand %>
-  <%= bike.model %>
-  <%= bike.details %>
-  <%= bike.category %>
-  <%= bike.wheel_size %>
-  <%= bike.price %> </li>
-  <%= link_to "Details", bike_path(bike) %>
-<% end %>
+<br>
+<div class="container">
+  <h1 class = "text-center">My bikes on sale</h1>
+  <br>
+  <% @bikes.each do |bike| %>
+    <li class="list-unstyled"> <%= bike.brand %>
+    <%= bike.model %>
+    <%= bike.details %>
+    <%= bike.category %>
+    <%= bike.wheel_size %>
+    <%= bike.price %> </li>
+    <%= link_to "Details", bike_path(bike), class: "btn btn-primary" %>
+    <hr>
+  <% end %>
+</div>
