@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :bikes, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :orders, only: [ :index, :new, :create ]
+    resources :orders, only: [ :new, :create, :show ]
   end
-  resources :orders, only: [ :destroy]
+  resources :orders, only: [ :index, :destroy]
 end
