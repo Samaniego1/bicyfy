@@ -3,10 +3,10 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      @bikes = Bike.search_by_bike(params[:query])
+      @bikes = Bike.available.search_by_bike(params[:query])
     else
       # render: "home"
-      @bikes = Bike.all
+      @bikes = Bike.available
     end
   end
 end
