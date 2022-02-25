@@ -2,17 +2,23 @@
 <div class="container">
   <p><%= cl_image_tag @user.avatar.key, height: 300, width: 500, crop: :fill %></p>
   <h2><%= @user.name %></h2>
-  <p><%= @user.address %></p>
-  <p><%= @user.email %></p>
-  <p><%= @user.phone %></p>
-
-  <h2>My reviews</h2>
+  <p>Adrress: <%= @user.address %></p>
+  <p>Email: <%= @user.email %></p>
+  <p>Phone: <%= @user.phone %></p>
+  <br>
+  <h3>My reviews</h3>
   <% @reviews.each do |review| %>
-    <li class="list-unstyled">
-      <%= review.rating %>
-      <%= review.content %>
-    </li>
+    <div class="notification">
 
+      <div class="notification-content">
+        <p> <%= review.content %> <%= '⭐' * review.rating %> </p>
+      </div>
+
+      <div class="notification-actions">
+        <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      </div>
+    </div>
   <% end %>
 <%= link_to 'Home', '/', class:"btn btn-danger" %>
 </div>
