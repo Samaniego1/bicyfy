@@ -1,5 +1,6 @@
 <br>
 <div class="container">
+  <p><%= cl_image_tag @user.avatar.key, height: 300, width: 500, crop: :fill %></p>
   <h2><%= @user.name %></h2>
   <p><%= @user.address %></p>
   <p><%= @user.email %></p>
@@ -13,5 +14,5 @@
     </li>
 
   <% end %>
-<%= link_to 'Home', '/' %>
+<%= link_to 'Home', '/', class:"btn btn-danger" %>
 </div>
