@@ -7,10 +7,12 @@
       <li><%= order.bike.brand %>
       <%= order.bike.model %>
       <%= order.bike.price %></li>
-      <p>Datos del vendedor</p>
-      <%= order.user.id %>
-      <br>
+      <span>Seller's Name: </span>
+      <%= order.bike.user.name %>
+      <%= link_to "Reviews", new_order_review_path(order.id) %>
       <hr>
+      <br>
     <% end %>
   </ul>
+  <%= link_to 'Home', '/' %>
 </div>
