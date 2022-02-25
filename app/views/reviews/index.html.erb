@@ -1,9 +1,12 @@
-<h1>Seller's reviews</h1>
+<br>
+<div class="container">
+  <h1>Seller's reviews</h1>
 
-<% @reviews.each do |r| %>
-  <li>
-    <%= r.rating %>
-    <%= r.content %>
+  <% @reviews.each do |r| %>
+    <li>
+      <%= r.rating %>
+      <%= r.content %>
 
-  </li>
-<% end %>
+    </li>
+  <% end %>
+</div>
