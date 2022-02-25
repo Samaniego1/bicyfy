@@ -72,3 +72,5 @@ gem 'pg_search'
 
 # Geocoder for map localization
 # gem 'geocoder'
+
+gem 'pundit'
