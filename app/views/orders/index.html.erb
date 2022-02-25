@@ -9,7 +9,7 @@
       <%= order.bike.price %></li>
       <span>Seller's Name: </span>
       <%= order.bike.user.name %>
-      <%= link_to "Reviews", new_order_review_path(order.id) %>
+      <%= link_to "Leave a reviews", new_order_review_path(order.id) %>
       <hr>
       <br>
     <% end %>
