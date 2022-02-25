@@ -24,7 +24,15 @@ class BikesController < ApplicationController
   end
 
   def edit
-    
+  end
+
+  def search
+    if params[:query].present?
+      @bikes = Bike.search_by_bike(params[:query])
+    else
+      # render: "home"
+      @bikes = Bike.all
+    end
   end
 
   def update

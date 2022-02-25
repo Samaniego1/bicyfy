@@ -3,12 +3,13 @@
   <h1 class = "text-center">My bike</h1>
 
   <h2><%= @bike.brand %></h2>
-  <p><%= @bike.model %></p>
-  <p><%= @bike.details %></p>
-  <p><%= @bike.category %></p>
-  <p><%= @bike.wheel_size %></p>
-  <p><%= @bike.price %></p>
+  <p>Model: <%= @bike.model %></p>
+  <p>Details: <%= @bike.details %></p>
+  <p>Category: <%= @bike.category %></p>
+  <p>Wheel Size: <%= @bike.wheel_size %></p>
+  <p>Price: $<%= @bike.price %></p>
   <p><%= cl_image_tag @bike.photos.first.key, height: 300, width: 500, crop: :fill %></p>
-  <%= link_to "Buy", new_bike_order_path(@bike), class: "btn btn-primary" %>
-  <%= link_to "Seller's reviews", user_reviews_path(@bike.user_id), class: "btn btn-primary" %>
+
+  <%= link_to "Buy", new_bike_order_path(@bike), class: "btn btn-danger" %>
+  <%= link_to "Seller's reviews", user_reviews_path(@bike.user_id), class: "btn btn-danger" %>
 </div>

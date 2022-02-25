@@ -67,5 +67,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Cloudinary for storing images
 gem 'cloudinary'
 
+# PG SEARCH for searchbar
+gem 'pg_search'
+
 # Geocoder for map localization
 # gem 'geocoder'
