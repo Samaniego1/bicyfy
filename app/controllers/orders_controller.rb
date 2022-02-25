@@ -1,12 +1,14 @@
 class OrdersController < ApplicationController
   before_action :find_order, only: [:edit, :destroy]
 
+
   def index
     @orders = Order.all.where(user: current_user)
   end
 
   def new
     @bike = Bike.find(params[:bike_id])
+    authorize @bike
     @order = Order.new
   end
 

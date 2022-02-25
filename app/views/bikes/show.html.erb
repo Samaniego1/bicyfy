@@ -9,7 +9,8 @@
   <p>Wheel Size: <%= @bike.wheel_size %></p>
   <p>Price: $<%= @bike.price %></p>
   <p><%= cl_image_tag @bike.photos.first.key, height: 300, width: 500, crop: :fill %></p>
-
+  <% unless policy(@bike).owner? %>
   <%= link_to "Buy", new_bike_order_path(@bike), class: "btn btn-danger" %>
+  <% end %>
   <%= link_to "Seller's reviews", user_path(@bike.user_id), class: "btn btn-danger" %>
 </div>

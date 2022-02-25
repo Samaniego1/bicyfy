@@ -1,16 +1,21 @@
 class BikesController < ApplicationController
-  before_action :current_bike, only: [ :edit, :update, :destroy]
+  before_action :current_bike, only: [ :show, :edit, :update, :destroy]
+  before_action :skip_policy_scope, only: :index
+
 
   def index
     @bikes = Bike.where(user: current_user)
+
   end
 
   def new
     @bike = Bike.new
+    authorize @bike
   end
 
   def create
     @bike = Bike.new(bike_params)
+    authorize @bike
     @bike.user = current_user
     if @bike.save
       redirect_to bike_path(@bike)
@@ -20,7 +25,6 @@ class BikesController < ApplicationController
   end
 
   def show
-    @bike = Bike.find(params[:id])
   end
 
   def edit
@@ -55,5 +59,6 @@ class BikesController < ApplicationController
 
   def current_bike
     @bike = Bike.find(params[:id])
+    authorize @bike
   end
 end
