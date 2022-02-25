@@ -4,9 +4,13 @@
 <div class="container">
   <div class="">
     <!-- Search form -->
-    <form class="form-inline">
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-    </form>
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+          class: "form-control",
+          placeholder: "Find a bike"
+      %>
+    <% end %>
   </div>
 </div>
 <br>
@@ -15,14 +19,15 @@
     <% @bikes.each do |bike| %>
       <div class="col-sm-6 col-md-3 col-lg-3">
         <div class="card" style="">
-          <ul>
-            <li class="list-unstyled"><%= cl_image_tag bike.photos.first.key, height: 100, width: 100, crop: :fill %>
-            <li class="list-unstyled"><%= bike.brand %> </li>
-            <li class="list-unstyled"><%= bike.model %> </li>
-            <li class="list-unstyled"><%= bike.category %> </li>
-            <li class="list-unstyled"><%= bike.wheel_size %> </li>
-            <li class="list-unstyled"><%= bike.price %> </li>
-            <li class="list-unstyled"><%= link_to "More", bike_path(bike) %> </li>
+          <ul class="">
+            <li class="list-unstyled"><%= cl_image_tag bike.photos.first.key, height: 100, width: 100, crop: :fill %> </li>
+            <li class="list-unstyled">Brand: <%= bike.brand %> </li>
+            <li class="list-unstyled">Model: <%= bike.model %> </li>
+            <li class="list-unstyled">Category: <%= bike.category %> </li>
+            <li class="list-unstyled">WS: <%= bike.wheel_size %> </li>
+            <li class="list-unstyled">- $<%= bike.price %> </li>
+            <li class="list-unstyled"><%= link_to "More", bike_path(bike), class: "btn btn-danger"%> </li>
+          </ul>
         </div>
       </div>
     <% end %>
