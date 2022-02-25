@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @reviews = Review.all.where(user: current_user)
   end
 
   private
