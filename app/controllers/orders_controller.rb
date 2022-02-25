@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     if @order.save
       @bike.status = 0
+      @bike.save
       redirect_to orders_path
     else
       render :new

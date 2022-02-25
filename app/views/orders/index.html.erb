@@ -1,18 +1,21 @@
 <br>
 <div class="container">
-  <h2 class = "text-center">Thanks for your purchases</h2>
+  <h2 class = "text-center">Thank you for your purchase!</h2>
   <br>
   <ul>
     <% @orders.each do |order| %>
-      <li><%= order.bike.brand %>
-      <%= order.bike.model %>
-      <%= order.bike.price %></li>
+      <li class="list-unstyled">Brand: <%= order.bike.brand %></li>
+      <li class="list-unstyled">Model: <%= order.bike.model %></li>
+      <li class="list-unstyled">Price: $<%= order.bike.price %></li>
       <span>Seller's Name: </span>
       <%= order.bike.user.name %>
-      <%= link_to "Leave a reviews", new_order_review_path(order.id) %>
+      <br>
+      <br>
+      <%= link_to "Leave a reviews", new_order_review_path(order.id), class: "btn btn-danger" %>
       <hr>
       <br>
     <% end %>
   </ul>
-  <%= link_to 'Home', '/' %>
+  <br>
+  <%= link_to 'Home', '/', class: "btn btn-danger" %>
 </div>
