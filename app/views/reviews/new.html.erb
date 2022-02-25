@@ -1,5 +1,8 @@
-<%= simple_form_for [@order, @review] do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :content %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+<br>
+<div class="container">
+  <%= simple_form_for [@order, @review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
+</div>

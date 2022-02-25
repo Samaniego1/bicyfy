@@ -3,7 +3,8 @@
   <h1 class = "text-center">My bikes on sale</h1>
   <br>
   <% @bikes.each do |bike| %>
-    <li class="list-unstyled"> 
+    <li class="list-unstyled">
+    <p><%= cl_image_tag bike.photos.first.key, height: 150, width: 200, crop: :scale, :border => { :width => 4, :color => 'black' } %></p>
     <p>Brand: <%= bike.brand %></p>
     <p>Model: <%= bike.model %></p>
     <p>Details: <%= bike.details %></p>
